@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>redux</title>
 <!--    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>-->
-    <script src="./src/redux.js" type="module"></script>
+<!--    <script src="src/redux.js" type="module"></script>-->
 </head>
 <body>
 <div>
@@ -16,7 +16,9 @@
         <button id="incrementAsync">Increment async</button>
     </p>
 </div>
-<script>
+<script type="module">
+    import { createStore } from './src/redux.js'; // 需要带上文件后缀，否则无法引入
+    debugger;
     // reducer
     function counter(state, action) {
         if (typeof state === 'undefined') {
@@ -33,7 +35,8 @@
         }
     }
 
-    var store = Redux.createStore(counter)
+    // var store = Redux.createStore(counter)
+    var store = createStore(counter, 0)
     var valueEl = document.getElementById('value')
 
     function render() {
