@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation 动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            animation-name: box-animation;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 500ms;
+            animation-play-state: running;
+        }
+        @keyframes box-animation {
+            0% { width: 120px }
+            30% { width: 140px }
+            50% { width: 160px }
+            80% { width: 180px }
+            100% { width: 200px }
+        }
+    </style>
+</head>
+<body>
+    <h4>通过animation处理动画效果</h4>
+    <div class="box"></div>
+</body>
+</html>

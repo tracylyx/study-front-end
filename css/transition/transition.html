@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition 动画</title>
+    <style>
+        p {
+            color: dimgray;
+            font-size: 14px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid darkblue;
+            background: lightblue;
+            transition-property: all; /* 指定需要应用transition动画的属性 */
+            transition-duration: 2s;
+            transition-delay: 200ms;
+            margin: 10px;
+        }
+        .ease {
+            transition-timing-function: ease; /* 开始、结束慢，中间快 */
+        }
+        .ease-in-out {
+            transition-timing-function: ease-in-out; /* 与ease类似，但是比它幅度大 */
+        }
+        .ease-in {
+            transition-timing-function: ease-in; /* 开始慢 */
+        }
+        .ease-out {
+            transition-timing-function: ease-out; /* 结束慢 */
+        }
+        .linear {
+            transition-timing-function: linear; /* 匀速 */
+        }
+        .step-start {
+            transition-timing-function: steps(1, start); /* 直接位于结束处 */
+        }
+        .step-end {
+            transition-timing-function: steps(1, end); /* 位于开始处，经过时间间隔后到结束位置 */
+        }
+        .cubic-bezier {
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* 等价 ease */
+        }
+        .box:hover {
+            width: 200px;
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h4>使用transition完成简单动画，下边demo展示了不同动画函数作用下的动画过程</h4>
+
+    <div class="box ease">ease，开始、结束慢，中间快</div>
+    <div class="box ease-in-out">ease-in-out，与ease类似，但是比它幅度大</div>
+    <div class="box ease-in">ease-in，开始慢</div>
+    <div class="box ease-out">ease-out，结束慢</div>
+    <div class="box linear">linear，匀速</div>
+    <div class="box step-start">step-start，直接位于结束处</div>
+    <div class="box step-end">ease-in，位于开始处，经过时间间隔后到结束位置</div>
+    <div class="box cubic-bezier">cubic-bezier</div>
+    <p>⚠️ cubic-bezier，贝塞尔曲线</p>
+    <p>通过4个点来控制，p0 p1 p2 p3，一直固定的点p0(0, 0), p3(1, 1),需要调整的两个点p1(x1, y1)、p2(x2, y2)</p>
+    <p>transition-timing-function: cubic-bazier(x1, y1, x2, y2)</p>
+
+</body>
+</html>
